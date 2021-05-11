@@ -13,6 +13,7 @@
 		0D342EDA26357519004C3EFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D342ED826357519004C3EFC /* Main.storyboard */; };
 		0D342EDC26357519004C3EFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D342EDB26357519004C3EFC /* Assets.xcassets */; };
 		0D342EDF26357519004C3EFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D342EDD26357519004C3EFC /* LaunchScreen.storyboard */; };
+		0D632D02263DE16700D16103 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D632D01263DE16700D16103 /* ColorCollectionViewCell.swift */; };
 		0D8ED693263C9DDB00AE249F /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8ED692263C9DDB00AE249F /* PlayerTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		0D342EDB26357519004C3EFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D342EDE26357519004C3EFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D342EE026357519004C3EFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D632D01263DE16700D16103 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
 		0D8ED692263C9DDB00AE249F /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +76,7 @@
 			children = (
 				0D342ED626357519004C3EFC /* ViewController.swift */,
 				0D8ED692263C9DDB00AE249F /* PlayerTableViewCell.swift */,
+				0D632D01263DE16700D16103 /* ColorCollectionViewCell.swift */,
 			);
 			path = "Player Configuration";
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D632D02263DE16700D16103 /* ColorCollectionViewCell.swift in Sources */,
 				0D8ED693263C9DDB00AE249F /* PlayerTableViewCell.swift in Sources */,
 				0D342ED726357519004C3EFC /* ViewController.swift in Sources */,
 				0D342ED326357519004C3EFC /* AppDelegate.swift in Sources */,

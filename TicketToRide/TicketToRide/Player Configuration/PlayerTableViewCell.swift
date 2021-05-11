@@ -7,19 +7,13 @@
 
 import UIKit
 
-class PlayerTableViewCell: UITableViewCell {
+final class PlayerTableViewCell: UITableViewCell {
     @IBOutlet weak var playerNameLabel: UILabel!
     @IBOutlet weak var colorView: UIView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func configure(with viewModel: Player) {
+        playerNameLabel.text = viewModel.name
+        colorView.backgroundColor = viewModel.playerColor.color
+        colorView.layer.cornerRadius = colorView.frame.width / 2
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }
