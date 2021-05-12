@@ -29,10 +29,20 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        viewModel.delegate = self
     }
-
+    private func handleAddPlayerButtonState(name: String?) {
+        addPlayerButton.isEnabled = (name != nil && name?.isEmpty == false) && viewModel.selectedPlayerColor != nil
+    }
+    
+    @IBAction func textFieldEditingChanged(_ sender: Any) {
+        guard let sender = sender as? UITextField else { return }
+        handleAddPlayerButtonState(name: sender.text)
+        viewModel.setPlayer(name: sender.text)
+    }
+    
     @IBAction func addPlayerButtonAction(_ sender: Any) {
+        viewModel.createPlayer()
     }
 }
 
@@ -63,8 +73,20 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         }
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.setPlayerColor(at: indexPath)
+        handleAddPlayerButtonState(name: playerNameTextField.text)
+    }
 }
 
+extension ViewController: PlayersViewModelDelegate {
+    func newPlayerWasCreated() {
+        playerNameTextField.text = nil
+        playersTableView.reloadData()
+        colorsCollectionView.reloadData()
+    }
+}
 //przeniesc do innego pliku
 
 enum PlayerColor: CaseIterable {
@@ -86,14 +108,34 @@ enum PlayerColor: CaseIterable {
     }
 }
 
+protocol PlayersViewModelDelegate: AnyObject {
+    func newPlayerWasCreated()
+}
+
 final class PlayersViewModel {
-    var players: [Player] = [
-        Player(name: "Donata", playerColor: .black),
-        Player(name: "Dorota", playerColor: .blue),
-        Player(name: "Monika", playerColor: .green)
-    ]
-    
+    var players: [Player] = []
     var colors = PlayerColor.allCases
+    private(set) var selectedPlayerColor: PlayerColor?
+    private var selectedPlayerName: String?
+    weak var delegate: PlayersViewModelDelegate?
+    
+    func setPlayerColor(at indexPath: IndexPath) {
+        selectedPlayerColor = colors[indexPath.row]
+    }
+    
+    func setPlayer(name: String?) {
+        selectedPlayerName = name
+    }
+    
+    func createPlayer() {
+        guard let name = selectedPlayerName, let color = selectedPlayerColor else { return }
+        let player = Player(name: name, playerColor: color)
+        players.append(player)
+        selectedPlayerColor = nil
+        selectedPlayerName = nil
+        colors.removeAll(where: { $0 == color })
+        delegate?.newPlayerWasCreated()
+    }
 }
 
 struct Player {

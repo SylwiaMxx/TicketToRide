@@ -65,7 +65,11 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="add player name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qly-50-aUJ">
                                         <rect key="frame" x="12" y="12" width="271" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <action selector="PlayerNameTextField:" destination="CSl-c2-gsn" eventType="editingDidEnd" id="mD8-IM-6rI"/>
+                                            <action selector="textFieldEditingChanged:" destination="uqd-Of-AUh" eventType="editingChanged" id="y2b-0d-FbL"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaS-F0-UG7">
                                         <rect key="frame" x="307" y="0.0" width="59" height="59"/>
@@ -75,6 +79,7 @@
                                         <color key="tintColor" systemColor="systemGreenColor"/>
                                         <state key="normal" image="arrowshape.turn.up.backward.2.fill" catalog="system"/>
                                         <connections>
+                                            <action selector="AddPlayerButton:" destination="CSl-c2-gsn" eventType="touchUpInside" id="jBH-Q3-2dl"/>
                                             <action selector="addPlayerButtonAction:" destination="uqd-Of-AUh" eventType="touchUpInside" id="McT-GL-aPi"/>
                                         </connections>
                                     </button>
@@ -140,6 +145,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r80-db-1z2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="CSl-c2-gsn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="959.4202898550725" y="374.18478260869568"/>
         </scene>
