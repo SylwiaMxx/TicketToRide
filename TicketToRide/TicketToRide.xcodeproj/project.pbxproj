@@ -13,6 +13,8 @@
 		0D342EDA26357519004C3EFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D342ED826357519004C3EFC /* Main.storyboard */; };
 		0D342EDC26357519004C3EFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D342EDB26357519004C3EFC /* Assets.xcassets */; };
 		0D342EDF26357519004C3EFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D342EDD26357519004C3EFC /* LaunchScreen.storyboard */; };
+		0D632D02263DE16700D16103 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D632D01263DE16700D16103 /* ColorCollectionViewCell.swift */; };
+		0D8ED693263C9DDB00AE249F /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8ED692263C9DDB00AE249F /* PlayerTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		0D342EDB26357519004C3EFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D342EDE26357519004C3EFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D342EE026357519004C3EFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D632D01263DE16700D16103 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
+		0D8ED692263C9DDB00AE249F /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,25 @@
 		0D342ED126357519004C3EFC /* TicketToRide */ = {
 			isa = PBXGroup;
 			children = (
+				0D8ED691263C9D1D00AE249F /* Player Configuration */,
 				0D342ED226357519004C3EFC /* AppDelegate.swift */,
 				0D342ED426357519004C3EFC /* SceneDelegate.swift */,
-				0D342ED626357519004C3EFC /* ViewController.swift */,
 				0D342ED826357519004C3EFC /* Main.storyboard */,
 				0D342EDB26357519004C3EFC /* Assets.xcassets */,
 				0D342EDD26357519004C3EFC /* LaunchScreen.storyboard */,
 				0D342EE026357519004C3EFC /* Info.plist */,
 			);
 			path = TicketToRide;
+			sourceTree = "<group>";
+		};
+		0D8ED691263C9D1D00AE249F /* Player Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				0D342ED626357519004C3EFC /* ViewController.swift */,
+				0D8ED692263C9DDB00AE249F /* PlayerTableViewCell.swift */,
+				0D632D01263DE16700D16103 /* ColorCollectionViewCell.swift */,
+			);
+			path = "Player Configuration";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +151,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D632D02263DE16700D16103 /* ColorCollectionViewCell.swift in Sources */,
+				0D8ED693263C9DDB00AE249F /* PlayerTableViewCell.swift in Sources */,
 				0D342ED726357519004C3EFC /* ViewController.swift in Sources */,
 				0D342ED326357519004C3EFC /* AppDelegate.swift in Sources */,
 				0D342ED526357519004C3EFC /* SceneDelegate.swift in Sources */,
@@ -216,7 +232,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -271,7 +287,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -289,6 +305,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 352CCRYTTH;
 				INFOPLIST_FILE = TicketToRide/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,7 +313,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = SylwiaMx.TicketToRide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,6 +325,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 352CCRYTTH;
 				INFOPLIST_FILE = TicketToRide/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +333,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = SylwiaMx.TicketToRide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
