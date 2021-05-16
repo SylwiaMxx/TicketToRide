@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -20,7 +21,8 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JNd-Wp-tsz">
                                 <rect key="frame" x="24" y="155" width="366" height="569"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.98039215690000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="sectionIndexBackgroundColor" red="0.69760710000000004" green="0.57284456490000002" blue="0.37641870979999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlayerTableViewCell" id="kQd-YE-DME" customClass="PlayerTableViewCell" customModule="TicketToRide" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="366" height="60"/>
@@ -32,7 +34,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grm-aG-5xQ">
                                                     <rect key="frame" x="0.0" y="19.666666666666668" width="318" height="21.000000000000004"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="0.15686274510000001" green="0.21176470589999999" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJk-cv-l3T" userLabel="color view">
@@ -52,6 +54,7 @@
                                                 <constraint firstItem="CJk-cv-l3T" firstAttribute="top" secondItem="CnM-N5-FmY" secondAttribute="top" constant="10" id="gHf-TB-gdV"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.99607843139999996" green="0.98039215690000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <outlet property="colorView" destination="CJk-cv-l3T" id="gEo-7R-bf4"/>
                                             <outlet property="playerNameLabel" destination="grm-aG-5xQ" id="oTv-76-Go3"/>
@@ -64,6 +67,8 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="add player name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qly-50-aUJ">
                                         <rect key="frame" x="12" y="12" width="271" height="35"/>
+                                        <color key="backgroundColor" red="0.99607843139999996" green="0.98039215690000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" red="0.15686274510000001" green="0.21176470589999999" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
@@ -73,18 +78,23 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaS-F0-UG7">
                                         <rect key="frame" x="307" y="0.0" width="59" height="59"/>
+                                        <color key="backgroundColor" red="0.86666666670000003" green="0.63137254899999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="qaS-F0-UG7" secondAttribute="height" id="NdZ-ca-G2m"/>
                                         </constraints>
-                                        <color key="tintColor" systemColor="systemGreenColor"/>
-                                        <state key="normal" image="arrowshape.turn.up.backward.2.fill" catalog="system"/>
+                                        <color key="tintColor" red="0.37647058820000001" green="0.42352941179999998" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal">
+                                            <color key="titleColor" red="0.37647058823529411" green="0.42352941176470588" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="titleShadowColor" red="0.15686274509803921" green="0.21176470588235294" blue="0.094117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <imageReference key="image" image="plus.square.fill" catalog="system" symbolScale="default"/>
+                                        </state>
                                         <connections>
                                             <action selector="AddPlayerButton:" destination="CSl-c2-gsn" eventType="touchUpInside" id="jBH-Q3-2dl"/>
                                             <action selector="addPlayerButtonAction:" destination="uqd-Of-AUh" eventType="touchUpInside" id="McT-GL-aPi"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                <color key="backgroundColor" red="0.8666666666666667" green="0.63137254901960782" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="qaS-F0-UG7" firstAttribute="top" secondItem="Bvi-EY-e5N" secondAttribute="top" id="72d-u3-Duz"/>
                                     <constraint firstAttribute="bottom" secondItem="qaS-F0-UG7" secondAttribute="bottom" id="KxH-BA-gm2"/>
@@ -97,7 +107,7 @@
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1xL-py-hy2">
                                 <rect key="frame" x="24" y="111" width="366" height="32"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.98039215690000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="cqc-5F-bVO"/>
                                 </constraints>
@@ -121,7 +131,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jQo-vX-HXP"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.99607843137254903" green="0.98039215686274506" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="JNd-Wp-tsz" firstAttribute="width" secondItem="Bvi-EY-e5N" secondAttribute="width" id="0Hn-FU-n6G"/>
                             <constraint firstItem="Bvi-EY-e5N" firstAttribute="top" secondItem="jQo-vX-HXP" secondAttribute="top" id="8JS-qy-kaD"/>
@@ -169,16 +179,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrowshape.turn.up.backward.2.fill" catalog="system" width="128" height="86"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <image name="plus.square.fill" catalog="system" width="128" height="114"/>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
