@@ -11,9 +11,9 @@ final class PlayerTableViewCell: UITableViewCell {
     @IBOutlet weak var playerNameLabel: UILabel!
     @IBOutlet weak var colorView: UIView!
     
-    func configure(with viewModel: Player) {
-        playerNameLabel.text = viewModel.name
-        colorView.backgroundColor = viewModel.playerColor.color
+    func configure(with playerViewController: Player) {
+        playerNameLabel.text = playerViewController.name
+        colorView.backgroundColor = playerViewController.playerColor.color
         colorView.layer.cornerRadius = colorView.frame.width / 2
     }
 }
