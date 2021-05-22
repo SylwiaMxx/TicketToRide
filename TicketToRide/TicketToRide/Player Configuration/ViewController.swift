@@ -25,57 +25,71 @@ final class ViewController: UIViewController {
     @IBOutlet weak var playerNameTextField: UITextField!
     @IBOutlet weak var addPlayerButton: UIButton!
     
-    private let playerViewController = PlayersViewModel()
+    private let viewModel = PlayersViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        playerViewController.delegate = self
+        viewModel.delegate = self
     }
+    
     private func handleAddPlayerButtonState(name: String?) {
-        addPlayerButton.isEnabled = (name != nil && name?.isEmpty == false) && playerViewController.selectedPlayerColor != nil
+        addPlayerButton.isEnabled = (name != nil && name?.isEmpty == false) && viewModel.selectedPlayerColor != nil
+    }
+    
+    private func showPointsScreen(for player: Player) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "PointsViewController")
+        if let controller = controller as? PointsViewController {
+            controller.configure(player: player)
+        }
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     @IBAction func textFieldEditingChanged(_ sender: Any) {
         guard let sender = sender as? UITextField else { return }
         handleAddPlayerButtonState(name: sender.text)
-        playerViewController.setPlayer(name: sender.text)
+        viewModel.setPlayer(name: sender.text)
     }
     
     @IBAction func addPlayerButtonAction(_ sender: Any) {
-        playerViewController.createPlayer()
+        viewModel.createPlayer()
     }
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        playerViewController.players.count
+        viewModel.players.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerTableViewCell", for: indexPath)
         if let playerCell = cell as? PlayerTableViewCell {
-            playerCell.configure(with: playerViewController.players[indexPath.row])
+            playerCell.configure(with: viewModel.players[indexPath.row])
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        showPointsScreen(for: viewModel.players[indexPath.row])
     }
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        playerViewController.colors.count
+        viewModel.colors.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ColorCollectionViewCell", for: indexPath)
         
         if let colorCell = cell as? ColorCollectionViewCell {
-            colorCell.configure(with: playerViewController.colors[indexPath.row])
+            colorCell.configure(with: viewModel.colors[indexPath.row])
         }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        playerViewController.setPlayerColor(at: indexPath)
+        viewModel.setPlayerColor(at: indexPath)
         handleAddPlayerButtonState(name: playerNameTextField.text)
     }
 }
@@ -88,4 +102,9 @@ extension ViewController: PlayersViewModelDelegate {
     }
 }
 
+final class PointsViewController: UIViewController {
+    public func configure(player: Player) {
+        
+    }
+}
 
